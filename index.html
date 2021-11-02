@@ -28,38 +28,38 @@
                 <div class="placnik">
                     <p>Plačnik</p>
                     <div class="floattxt">
-                        <input type="text" name="racun" id="racunid" placeholder=" " required />
+                        <input type="text" name="racun" id="racunid" placeholder=" " required autocomplete="off" />
                         <label for="racunid" id="labelracunid">Račun</label>
                     </div>
                     <div class="floattxt">
-                        <input type="text" name="nazivpla" id="nazivplaid" placeholder=" " required />
+                        <input type="text" name="nazivpla" id="nazivplaid" placeholder=" " required autocomplete="off" />
                         <label for="nazivplaid" id="labelnazivplaid">Naziv</label>
                     </div>
                     <div class="floattxt">
-                        <input type="text" name="ibanpla" id="ibanplaid" pattern="^SI56(?:[ ]?[0-9]{4}){3}([ ]?[0-9]{3})$" title="SI56 0000 0000 0000 000" placeholder="SI56 0000 0000 0000 000" required />
+                        <input type="text" name="ibanpla" id="ibanplaid" pattern="^SI56(?:[ ]?[0-9]{4}){3}([ ]?[0-9]{3})$" title="SI56 0000 0000 0000 000" placeholder="SI56 0000 0000 0000 000" required autocomplete="off" />
                         <label for="ibanplaid" id="labelibanplaid">IBAN</label>
                     </div>
                 </div>
                 <div class="prejemnik">
                     <p>Prejemnik</p>
                     <div class="floattxt">
-                        <input type="text" name="nazivpre" id="nazivpreid" placeholder=" " required />
+                        <input type="text" name="nazivpre" id="nazivpreid" placeholder=" " required autocomplete="off" />
                         <label for="nazivpreid" id="labelnazivpreid">Naziv </label>
                     </div>
                     <div class="floattxt">
-                        <input type="text" name="ibanpre" id="ibanpreid" pattern="^SI56(?:[ ]?[0-9]{4}){3}([ ]?[0-9]{3})$" title="SI56 0000 0000 0000 000" placeholder="SI56 0000 0000 0000 000" required />
+                        <input type="text" name="ibanpre" id="ibanpreid" pattern="^SI56(?:[ ]?[0-9]{4}){3}([ ]?[0-9]{3})$" title="SI56 0000 0000 0000 000" placeholder="SI56 0000 0000 0000 000" required autocomplete="off" />
                         <label for="ibanpreid" id="labelibanpreid">IBAN </label>
                     </div>
                     <div class="floattxt">
-                        <input type="text" name="naslov" id="naslovid" placeholder=" " required />
+                        <input type="text" name="naslov" id="naslovid" placeholder=" " required autocomplete="off" />
                         <label for="naslovid" id="labelnaslovid">Naslov </label>
                     </div>
                     <div class="floattxt">
-                        <input type="text" name="kraj" id="krajid" placeholder=" " required />
+                        <input type="text" name="kraj" id="krajid" placeholder=" " required autocomplete="off" />
                         <label for="krajid" id="labelkrajid">Kraj </label>
                     </div>
                     <div class="floattxt">
-                        <input list="drzave" name="drzava" id="drzavaid" value="SLOVENIJA" onClick="this.select();" placeholder=" " required />
+                        <input list="drzave" name="drzava" id="drzavaid" value="SLOVENIJA" onClick="this.select();" placeholder=" " required autocomplete="off" />
                         <label for="drzavaid" id="labeldrzavaid">Država* </label>
                         <datalist id="drzave">
                             <option value="AFGANISTAN">
@@ -264,7 +264,7 @@
                 <div class="placilo">
                     <p>Podrobnosti plačila</p>
                     <div class="floattxt">
-                        <input list="koden" name="kodanam" id="kodanamid" value="GDSV - KUPOPRODAJA BLAGA IN STORITEV" onClick="this.select();" placeholder=" " required />
+                        <input list="koden" name="kodanam" id="kodanamid" value="GDSV - KUPOPRODAJA BLAGA IN STORITEV" onClick="this.select();" placeholder=" " required autocomplete="off" />
                         <label for="kodanamid" id="labelkodanamid">Koda namena </label>
                         <datalist id="koden">
                             <option value="ACCT - UPRAVLJANJE DENARNIH SREDSTEV - ZNOTRAJ BANKE">
@@ -432,27 +432,27 @@
                     <div class="modref">
                         <div class="model">
                             <div class="floattxt">
-                                <input type="text" name="model" id="modelid" value="SI99" pattern="^SI[0-9]{2}$" title="SI00" placeholder=" " required />
+                                <input type="text" name="model" id="modelid" value="SI99" pattern="^SI[0-9]{2}$" title="SI00" placeholder=" " required autocomplete="off" />
                                 <label for="modelid" id="labelmodelid">Model </label>
                             </div>
                         </div>
                         <div class="referenca">
                             <div class="floattxt">
-                                <input type="text" name="referenca" id="referencaid" pattern="^[0-9]{1,}$" title="Uporabite lahko le stevila" placeholder=" " required />
+                                <input type="text" name="referenca" id="referencaid" pattern="^[0-9]{1,}$" title="Uporabite lahko le stevila" placeholder=" " required autocomplete="off" />
                                 <label for="referencaid" id="labelreferencaid">Referenca</label>
                             </div>
                         </div>
                     </div>
                     <div class="floattxt">
-                        <input type="text" placeholder="0,00" name="znesek" id="znesekid" pattern="^\d{1,}([,][0-9]{2})$" title="Cena ima stevilo in 2 decimalni stevki ločeni z vejico" required />
+                        <input type="text" placeholder="0,00" name="znesek" id="znesekid" pattern="^\d{1,}([,][0-9]{2})$" title="Cena ima stevilo in 2 decimalni stevki ločeni z vejico" required autocomplete="off" />
                         <label for="znesekid" id="labelznesekid">Znesek </label>
                     </div>
                     <div class="floattxt">
-                        <input type="text" name="namen" value="Plačilo" id="namenid" placeholder=" " required />
+                        <input type="text" name="namen" value="Plačilo" id="namenid" placeholder=" " required autocomplete="off" />
                         <label for="namenid" id="labelnamenid">Namen </label>
                     </div>
                     <div class="floattxt">
-                        <input type="date" name="datum" id="datumid" required />
+                        <input type="date" name="datum" id="datumid" required/>
                         <label for="datumid" id="labeldatumid">Datum plačila</label>
                     </div>
                     <div>
