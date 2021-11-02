@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #ebebeb;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* glavni div */
+
+.main {
+    margin-top: 10px;
+    position: relative;
+    padding: 15px;
+    background: #fafafa;
+    width: 50%;
+    min-height: 90vh;
+    border-radius: 25px;
+}
+
+
+/* glava */
+
+.head {
+    width: 100%;
+    height: 5%;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headleft {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* pomoc */
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.headright {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.headright:hover {
+    background: #ebebeb;
+    cursor: pointer;
+}
+
+
+/* telo */
+
+.formmain {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* celice v telesu */
+
+p {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.placnik {
+    flex-grow: 100;
+    width: 300px;
+}
+
+.prejemnik {
+    flex-grow: 100;
+    width: 300px;
+}
+
+.placilo {
+    flex-grow: 100;
+    width: 300px;
+    margin-bottom: 40px;
+}
+
+
+/* vecina inputboxov */
+
+input[type=text] {
+    width: 90%;
+    height: 30px;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    background: #fafafa;
+    border-bottom: 1px solid #909090;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border-bottom: 2px solid #6F2639;
+}
+
+
+/* input za drzavo in kodo namen */
+
+input[list] {
+    width: 90%;
+    height: 30px;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    background: #fafafa;
+    border-bottom: 1px solid #909090;
+    outline: none;
+}
+
+input[list]:focus {
+    border-bottom: 2px solid #6F2639;
+}
+
+input[list]::-webkit-calendar-picker-indicator {
+    display: none !important;
+}
+
+
+/* model in referenca */
+
+.modref {
+    display: flex;
+}
+
+.model {
+    width: 20%;
+}
+
+.referenca {
+    width: 78%;
+}
+
+
+/* input za datum */
+
+input[type=date] {
+    width: 90%;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    border: none;
+    background: #fafafa;
+    border-bottom: 1px solid #909090;
+    outline: none;
+}
+
+input[type=date]:focus {
+    border-bottom: 2px solid #6F2639;
+}
+
+
+/* input za checkbox */
+
+.nujnplac {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.nujnplac input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background: #fafafa;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.nujnplac:hover input~.checkmark {
+    background: #fafafa;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.nujnplac input:checked~.checkmark {
+    background-color: #c1002d;
+    border-color: #c1002d;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.nujnplac input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.nujnplac .checkmark:after {
+    left: 5px;
+    top: 0.5px;
+    width: 4px;
+    height: 10px;
+    border: solid #fafafa;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+/* floaty labels */
+
+.floattxt {
+    display: flex;
+    flex-flow: column-reverse;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+label {
+    color: #000000;
+    transition: .2s;
+    padding: 2px;
+    font-size: 10px;
+}
+
+input:placeholder-shown+label {
+    /* ko se placeholder ne vidi skoci na pozicijo ki jo oznaije transform */
+    cursor: text;
+    max-width: 50%;
+    transform-origin: left bottom;
+    transform: translate(0, 30px) scale(1.5);
+}
+
+::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+input:focus+label {
+    /* ko se placeholder vidi skoci na prvotno pozicijo */
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+}
+
+
+/* footer */
+
+.submit {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+input[type=submit] {
+    width: 100px;
+    font: inherit;
+    font-size: 15px;
+    background: #c1002d;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    height: 40px;
+}

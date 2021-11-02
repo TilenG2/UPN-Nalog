@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>UPN Nalog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel='ICON' href="slike/logo.ico" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <div class="headleft">
+                Novo plačilo
+            </div>
+            <a href="https://www.nkbm.si/bnk-pomoc-storitve" target="_blank">
+                <div class="headright">
+                    <span class="material-icons">help_outline</span>
+                    <span class="help">Pomoč</span>
+                </div>
+            </a>
+        </div>
+        <hr />
+        <form id="fullForm">
+            <div class="formmain">
+                <div class="placnik">
+                    <p>Plačnik</p>
+                    <div class="floattxt">
+                        <input type="text" name="racun" id="racunid" placeholder=" " required />
+                        <label for="racunid" id="labelracunid">Račun</label>
+                    </div>
+                    <div class="floattxt">
+                        <input type="text" name="nazivpla" id="nazivplaid" placeholder=" " required />
+                        <label for="nazivplaid" id="labelnazivplaid">Naziv</label>
+                    </div>
+                    <div class="floattxt">
+                        <input type="text" name="ibanpla" id="ibanplaid" pattern="^SI56(?:[ ]?[0-9]{4}){3}([ ]?[0-9]{3})$" title="SI56 0000 0000 0000 000" placeholder="SI56 0000 0000 0000 000" required />
+                        <label for="ibanplaid" id="labelibanplaid">IBAN</label>
+                    </div>
+                </div>
+                <div class="prejemnik">
+                    <p>Prejemnik</p>
+                    <div class="floattxt">
+                        <input type="text" name="nazivpre" id="nazivpreid" placeholder=" " required />
+                        <label for="nazivpreid" id="labelnazivpreid">Naziv </label>
+                    </div>
+                    <div class="floattxt">
+                        <input type="text" name="ibanpre" id="ibanpreid" pattern="^SI56(?:[ ]?[0-9]{4}){3}([ ]?[0-9]{3})$" title="SI56 0000 0000 0000 000" placeholder="SI56 0000 0000 0000 000" required />
+                        <label for="ibanpreid" id="labelibanpreid">IBAN </label>
+                    </div>
+                    <div class="floattxt">
+                        <input type="text" name="naslov" id="naslovid" placeholder=" " required />
+                        <label for="naslovid" id="labelnaslovid">Naslov </label>
+                    </div>
+                    <div class="floattxt">
+                        <input type="text" name="kraj" id="krajid" placeholder=" " required />
+                        <label for="krajid" id="labelkrajid">Kraj </label>
+                    </div>
+                    <div class="floattxt">
+                        <input list="drzave" name="drzava" id="drzavaid" value="SLOVENIJA" onClick="this.select();" placeholder=" " required />
+                        <label for="drzavaid" id="labeldrzavaid">Država* </label>
+                        <datalist id="drzave">
+                            <option value="AFGANISTAN">
+                            <option value="ALBANIJA">
+                            <option value="ALŽIRIJA">
+                            <option value="ANDORA">
+                            <option value="ANGOLA">
+                            <option value="ANTIGVA IN BARBUDA">
+                            <option value="ARGENTINA">
+                            <option value="ARMENIJA">
+                            <option value="AVSTRALIJA">
+                            <option value="AVSTRIJA">
+                            <option value="AZERBAJDŽAN">
+                            <option value="BAHAMI">
+                            <option value="BAHRAJN">
+                            <option value="BANGLADEŠ">
+                            <option value="BARBADOS">
+                            <option value="BELGIJA">
+                            <option value="BELIZE">
+                            <option value="BELORUSIJA">
+                            <option value="BENIN">
+                            <option value="BOCVANA">
+                            <option value="BOLGARIJA">
+                            <option value="BOLIVIJA">
+                            <option value="BOSNA IN HERCEGOVINA">
+                            <option value="BRAZILIJA">
+                            <option value="BRUNEJ">
+                            <option value="BURKINA FASO">
+                            <option value="BURUNDI">
+                            <option value="BUTAN">
+                            <option value="CIPER">
+                            <option value="ČAD">
+                            <option value="ČEŠKA">
+                            <option value="ČILE">
+                            <option value="ČRNA GORA">
+                            <option value="DANSKA">
+                            <option value="DOMINIKA">
+                            <option value="DOMINIKANSKA REPUBLIKA">
+                            <option value="DŽIBUTI">
+                            <option value="EGIPT">
+                            <option value="EKVADOR">
+                            <option value="EKVATORIALNA GVINEJA">
+                            <option value="ERITREJA">
+                            <option value="ESTONIJA">
+                            <option value="ESVATINI">
+                            <option value="ETIOPIJA">
+                            <option value="FIDŽI">
+                            <option value="FILIPINI">
+                            <option value="FINSKA">
+                            <option value="FRANCIJA">
+                            <option value="GABON">
+                            <option value="GAMBIJA">
+                            <option value="GANA">
+                            <option value="GRČIJA">
+                            <option value="GRENADA">
+                            <option value="GRUZIJA">
+                            <option value="GVAJANA">
+                            <option value="GVATEMALA">
+                            <option value="GVINEJA">
+                            <option value="GVINEJA BISSAU">
+                            <option value="HAITI">
+                            <option value="HONDURAS">
+                            <option value="HRVAŠKA">
+                            <option value="INDIJA">
+                            <option value="INDONEZIJA">
+                            <option value="IRAK">
+                            <option value="IRAN">
+                            <option value="IRSKA">
+                            <option value="ISLANDIJA">
+                            <option value="ITALIJA">
+                            <option value="IZRAEL">
+                            <option value="JAMAJKA">
+                            <option value="JAPONSKA">
+                            <option value="JEMEN">
+                            <option value="JORDANIJA">
+                            <option value="JUŽNA AFRIKA">
+                            <option value="JUŽNA KOREJA">
+                            <option value="JUŽNI SUDAN">
+                            <option value="KAMBODŽA">
+                            <option value="KAMERUN">
+                            <option value="KANADA">
+                            <option value="KATAR">
+                            <option value="KAZAHSTAN">
+                            <option value="KENIJA">
+                            <option value="KIRGIZISTAN">
+                            <option value="KIRIBATI">
+                            <option value="LJUDSKA REPUBLIKA KITAJSKA">
+                            <option value="KOLUMBIJA">
+                            <option value="KOMORI">
+                            <option value="KONGO">
+                            <option value="DEMOKRATIČNA REPUBLIKA KONGO">
+                            <option value="KOSTARIKA">
+                            <option value="KUBA">
+                            <option value="KUVAJT">
+                            <option value="LAOS">
+                            <option value="LATVIJA">
+                            <option value="LESOTO">
+                            <option value="LIBANON">
+                            <option value="LIBERIJA">
+                            <option value="LIBIJA">
+                            <option value="LIHTENŠTAJN">
+                            <option value="LITVA">
+                            <option value="LUKSEMBURG">
+                            <option value="MADAGASKAR">
+                            <option value="MADŽARSKA">
+                            <option value="MALAVI">
+                            <option value="MALDIVI">
+                            <option value="MALEZIJA">
+                            <option value="MALI">
+                            <option value="MALTA">
+                            <option value="MAROKO">
+                            <option value="MARSHALLOVI OTOKI">
+                            <option value="MAURITIUS">
+                            <option value="MAVRETANIJA">
+                            <option value="MEHIKA">
+                            <option value="MIKRONEZIJA">
+                            <option value="MJANMAR">
+                            <option value="MOLDAVIJA">
+                            <option value="MONAKO">
+                            <option value="MONGOLIJA">
+                            <option value="MOZAMBIK">
+                            <option value="NAMIBIJA">
+                            <option value="NAURU">
+                            <option value="NEMČIJA">
+                            <option value="NEPAL">
+                            <option value="NIGER">
+                            <option value="NIGERIJA">
+                            <option value="NIKARAGVA">
+                            <option value="NIZOZEMSKA">
+                            <option value="NORVEŠKA">
+                            <option value="NOVA ZELANDIJA	">
+                            <option value="OMAN">
+                            <option value="PAKISTAN">
+                            <option value="PALAU">
+                            <option value="PALESTINA">
+                            <option value="PANAMA">
+                            <option value="PAPUA NOVA GVINEJA">
+                            <option value="PARAGVAJ">
+                            <option value="PERU">
+                            <option value="POLJSKA">
+                            <option value="PORTUGALSKA">
+                            <option value="ROMUNIJA">
+                            <option value="RUANDA">
+                            <option value="RUSIJA">
+                            <option value="SAINT KITTS IN NEVIS">
+                            <option value="SVETA LUCIJA">
+                            <option value="SVETI VINCENCIJ IN GRENADINE">
+                            <option value="SALOMONOVI OTOKI">
+                            <option value="SALVADOR">
+                            <option value="SAMOA">
+                            <option value="SAN MARINO">
+                            <option value="SAO TOME IN PRINCIPE">
+                            <option value="SAUDOVA ARABIJA">
+                            <option value="SEJŠELI">
+                            <option value="SENEGAL">
+                            <option value="SEVERNA KOREJA">
+                            <option value="SEVERNA MAKEDONIJA">
+                            <option value="SIERRA LEONE">
+                            <option value="SINGAPUR">
+                            <option value="SIRIJA">
+                            <option value="SLONOKOŠČENA OBALA">
+                            <option value="SLOVAŠKA">
+                            <option value="SLOVENIJA">
+                            <option value="SOMALIJA">
+                            <option value="SRBIJA">
+                            <option value="SREDNJEAFRIŠKA REPUBLIKA">
+                            <option value="SUDAN">
+                            <option value="SURINAM">
+                            <option value="ŠPANIJA">
+                            <option value="ŠRILANKA">
+                            <option value="ŠVEDSKA">
+                            <option value="ŠVICA">
+                            <option value="TADŽIKISTAN">
+                            <option value="TAJSKA">
+                            <option value="TAJVAN">
+                            <option value="TANZANIJA">
+                            <option value="TOGO">
+                            <option value="TONGA">
+                            <option value="TRINIDAD IN TOBAGO">
+                            <option value="TUNIZIJA">
+                            <option value="TURČIJA">
+                            <option value="TURKMENISTAN">
+                            <option value="TUVALU">
+                            <option value="UGANDA">
+                            <option value="UKRAJINA">
+                            <option value="URUGVAJ">
+                            <option value="UZBEKISTAN">
+                            <option value="VANUATU">
+                            <option value="VATIKAN">
+                            <option value="VELIKA BRITANIJA">
+                            <option value="VENEZUELA">
+                            <option value="VIETNAM">
+                            <option value="VZHODNI TIMOR">
+                            <option value="ZAMBIJA">
+                            <option value="ZDA">
+                            <option value="ZDRUŽENI ARABSKI EMIRATI">
+                            <option value="ZELENORTSKI OTOKI">
+                            <option value="ZIMBABVE">
+                        </datalist>
+                    </div>
+                </div>
+                <div class="placilo">
+                    <p>Podrobnosti plačila</p>
+                    <div class="floattxt">
+                        <input list="koden" name="kodanam" id="kodanamid" value="GDSV - KUPOPRODAJA BLAGA IN STORITEV" onClick="this.select();" placeholder=" " required />
+                        <label for="kodanamid" id="labelkodanamid">Koda namena </label>
+                        <datalist id="koden">
+                            <option value="ACCT - UPRAVLJANJE DENARNIH SREDSTEV - ZNOTRAJ BANKE">
+                            <option value="ADVA - PLAČILO VNAPREJ / PREDPLAČILO">
+                            <option value="ADMG - ADMINISTRATIVNE STORITVE">
+                            <option value="AEMP - AKTIVNA POLITIKA ZAPOSLOVANJA">
+                            <option value="AGRT - PLAČILO V KMETIJSTVU">
+                            <option value="AIRB - ZRAČNI PREVOZ">
+                            <option value="ALLW - NADOMESTILA">
+                            <option value="ALMY - PREŽIVNINA">
+                            <option value="ANNI - PLAČILO OBROKA KREDITA / ZAVAROVANJA">
+                            <option value="ANTS - STORITVE ANESTEZIJE">
+                            <option value="AREN - VNOS / VPIS TERJATEV">
+                            <option value="BBSC - SPODBUDA ZA ROJSTVO OTROKA">
+                            <option value="BECH - OTROŠKI DODATEK">
+                            <option value="BENE - PODPORA ZA BREZPOSELNE / INVALIDE">
+                            <option value="BEXP - POSLOVNI IZDATKI">
+                            <option value="BOCE - VNOS / VPIS KONVERZIJE V ZALEDJU">
+                            <option value="BONU - BONUS PLAČILO">
+                            <option value="BLDM - VZDRŽEVANJE ZGRADB">
+                            <option value="BUSB - AVTOBUSNI TRANSPORT">
+                            <option value="CAFI - INTERNA PROVIZIJA ZA UPRAVLJANJE SKRBNIŠKEGA RAČUNA">
+                            <option value="CASH - UPRAVLJANJE DENARNIH SREDSTEV - MED BANKAMI">
+                            <option value="CBFF - POKOJNINSKI SKLADI, VARČEVANJE">
+                            <option value="CBLK - KLIRING SVEŽNJA KARTIC">
+                            <option value="CBTV - RAČUN ZA KABELSKO TV">
+                            <option value="CCRD - PLAČILO S KREDITNO KARTICO">
+                            <option value="CDBL - PLAČILO RAČUNA ZA KREDITNO KARTICO">
+                            <option value="CDCB - KARTIČNA PLAČILA Z GOTOVINSKIM VRAČILOM">
+                            <option value="CDCD - KARTIČNO IZPLAČILO">
+                            <option value="CDCS - KARTIČNO IZPLAČILO Z DODATNIMI STROŠKI">
+                            <option value="CDDP - ODLOŽENO PLAČILO S KARTICO">
+                            <option value="CDOC - ORIGINALNA ODOBRITEV">
+                            <option value="CDQC - NAVIDEZNA GOTOVINA">
+                            <option value="CFDI - INTERNO ZMANJŠANJE OSNOVNEGA KAPITALA">
+                            <option value="CFEE - STROŠKI PREKLICA">
+                            <option value="CHAR - DOBRODELNO PLAČILO">
+                            <option value="CLPR - PLAČILO AVTOMOBILSKEGA KREDITA">
+                            <option value="CMDT - PLAČILO BLAGA">
+                            <option value="COLL - NALOG ZA IZVRŠITEV PLAČILA">
+                            <option value="COMC - KOMERCIALNO PLAČILO">
+                            <option value="COMM - PLAČILO PROVIZIJE">
+                            <option value="COMT - KONSOLIDIRANO PLAČILO TRETJE STRANKE ZA POTROŠNIKA">
+                            <option value="COST - STROŠKI">
+                            <option value="CPCK - PARKIRNINA">
+                            <option value="CPYR - AVTORSKA PRAVICA">
+                            <option value="CSDB - DENARNO IZPLAČILO">
+                            <option value="CSLP - PLAČILO SOCIALNEGA POSOJILA BANKI">
+                            <option value="CVCF - PRIPOMOČKI ZA OKREVAJOČE">
+                            <option value="DBTC - DEBETNO PLAČILO">
+                            <option value="DCRD - PLAČILO Z DEBETNO KARTICO">
+                            <option value="DEPT - DEPOZIT">
+                            <option value="DERI - DERIVATIVI">
+                            <option value="DIVD - DIVIDENDA">
+                            <option value="DMEQ - MEDICINSKA OPREMA">
+                            <option value="DNTS - ZOBOZDRAVSTVENE STORITVE">
+                            <option value="EDUC - IZOBRAŽEVANJE">
+                            <option value="ELEC - RAČUN ZA ELEKTRIKO">
+                            <option value="ENRG - ENERGETIKA">
+                            <option value="ESTX - DAVEK NA NEPREMIČNINE">
+                            <option value="ETUP - E-DENARNICA">
+                            <option value="FAND - FINANČNA POMOČ DRŽAVNIH ORGANOV IN LOKALNIH SKUPNOSTI ZA ODPRAVO POSLEDIC NARAVNIH NESREČ">
+                            <option value="FCPM - ZAMUDNE OBRESTI IN STROŠKI">
+                            <option value="FCOL - PROVIZIJA">
+                            <option value="FERB - LADIJSKI PREVOZ">
+                            <option value="FWLV - DAJATVE ZA TUJE DELAVCE">
+                            <option value="FREX - DEVIZNO POSLOVANJE">
+                            <option value="GASB - RAČUN ZA PLIN">
+                            <option value="GDDS - KUPOPRODAJA BLAGA">
+                            <option value="GDSV - KUPOPRODAJA BLAGA IN STORITEV">
+                            <option value="GFRP - PLAČILA IZ NASLOVA INSOLVENTNOSTI">
+                            <option value="GOVI - DRŽAVNO ZAVAROVANJE">
+                            <option value="GOVT - PLAČILO V DOBRO / BREME DRŽAVNEGA ORGANA">
+                            <option value="GSCB - KUPOPRODAJA BLAGA IN STORITEV Z GOTOVINO">
+                            <option value="GSTX - DAVEK NA BLAGO IN STORITVE">
+                            <option value="GVEA - AVSTRIJSKI VLADNI USLUŽBENCI KATEGORIJE A">
+                            <option value="GVEB - AVSTRIJSKI VLADNI USLUŽBENCI KATEGORIJE B">
+                            <option value="GVEC - AVSTRIJSKI VLADNI USLUŽBENCI KATEGORIJE C">
+                            <option value="GVED - AVSTRIJSKI VLADNI USLUŽBENCI KATEGORIJE D">
+                            <option value="GWLT - NAKAZILA PO VOJNIH ZAKONIH">
+                            <option value="HEDG - ZAŠČITA PRED TVEGANJI">
+                            <option value="HLRP - PLAČILO STANOVANJSKEGA POSOJILA">
+                            <option value="HLTC - ZDRAVSTVENA OSKRBA NA DOMU">
+                            <option value="HLTI - ZDRAVSTVENO ZAVAROVANJE">
+                            <option value="HSPC - BOLNIŠNIČNA OSKRBA">
+                            <option value="HSTX - STANOVANJSKI DAVEK">
+                            <option value="ICCP - NEPREKLICNO PLAČILO S KREDITNO KARTICO">
+                            <option value="ICRF - PRVA / NUJNA POMOČ">
+                            <option value="IDCP - NEPREKLICNO PLAČILO Z DEBETNO KARTICO">
+                            <option value="IHRP - PLAČILO OBROKA NAJEMNINE / NAKUPA">
+                            <option value="INPC - PREMIJA AVTOMOBILSKEGA ZAVAROVANJA">
+                            <option value="INSM - PLAČILO OBROKA">
+                            <option value="INSU - ZAVAROVALNA PREMIJA">
+                            <option value="INTC - INTERNO PLAČILO">
+                            <option value="INTE - OBRESTI">
+                            <option value="INTX - DAVEK NA DOBIČEK">
+                            <option value="INVS - NALOŽBE & VREDNOSTNI PAPIRJI">
+                            <option value="IVPT - PLAČILO RAČUNA">
+                            <option value="LBRI - DELOVNO ZAVAROVANJE">
+                            <option value="LICF - LICENČNA PROVIZIJA / LICENČNINA">
+                            <option value="LIFI - ŽIVLJENJSKO ZAVAROVANJE">
+                            <option value="LIMA - UPRAVLJANJE LIKVIDNOSTI">
+                            <option value="LOAN - POSOJILO">
+                            <option value="LOAR - ODPLAČILO POSOJILA">
+                            <option value="LTCF - DOLGOTRAJNA ZDRAVSTVENA OSKRBA">
+                            <option value="MDCS - ZDRAVSTVENE STORITVE">
+                            <option value="MSVC - VEČNAMENSKE STORITVE">
+                            <option value="MTUP - POLNJENJE MOBI RAČUNA">
+                            <option value="NETT - NETO IZRAVNAVA">
+                            <option value="NITX - DAVEK NA ČISTI DOBIČEK">
+                            <option value="NOWS - NI OPREDELJENO DRUGOD.">
+                            <option value="NWCH - OMREŽNINA">
+                            <option value="NWCM - PLAČILO KOMUNIKACIJSKEGA OMREŽJA">
+                            <option value="OFEE - OTVORITVENA PROVIZIJA">
+                            <option value="OTHR - DRUGO">
+                            <option value="OTLC - DRUGI RAČUNI - TELEKOMUNIKACIJE">
+                            <option value="PADD - VNAPREJ ODOBRENA OBREMENITEV">
+                            <option value="PAYR - PLAČILNA LISTA">
+                            <option value="PENO - PLAČILO PO VSEH SKLEPIH O IZVRŠBAH, RAZEN SODNIH ZA PREŽIVNINE">
+                            <option value="PENS - POKOJNINA">
+                            <option value="PHON - RAČUN ZA TELEFON">
+                            <option value="POPE - VNOS / VPIS PRODAJNEGA MESTA">
+                            <option value="PPTI - ZAVAROVANJE LASTNINE">
+                            <option value="PRCP - PLAČILO IZDATKOV">
+                            <option value="PRME - PLEMENITE KOVINE">
+                            <option value="PTSP - PLAČILNI POGOJI">
+                            <option value="PTXP - DAVEK NA PREMOŽENJE">
+                            <option value="RCKE - PLAČILO ZA PONOVNO UNOVČITEV ČEKA">
+                            <option value="RCPT - PLAČILO ZA IZDAJO POTRDILA">
+                            <option value="RDTX - DAJATEV V CESTNEM PROMETU">
+                            <option value="REBT - VRAČILO RABATA">
+                            <option value="REFU - VRAČILO DENARNIH SREDSTEV">
+                            <option value="RENT - NAJEMNINA">
+                            <option value="RHBS - REHABILITACIJA INVALIDOV">
+                            <option value="RINP - OBROČNA PLAČILA">
+                            <option value="RLWY - ŽELEZNIŠKI PREVOZ">
+                            <option value="ROYA - PLAČILO IZ NASLOVA AVTORSKIH PRAVIC">
+                            <option value="SALA - PLAČA">
+                            <option value="SAVG - VARČEVANJE">
+                            <option value="SCVE - KUPOPRODAJA STORITEV">
+                            <option value="SECU - VREDNOSTNI PAPIRJI">
+                            <option value="SEPI - INTERNI NAKUP VREDNOSTNIH PAPIRJEV">
+                            <option value="SSBE - SOCIALNA PODPORA">
+                            <option value="STDY - ŠTUDIJ">
+                            <option value="SUBS - NAROČNINA">
+                            <option value="SUPP - PLAČILO DOBAVITELJEM">
+                            <option value="TAXR - VRAČILO DAVKA">
+                            <option value="TAXS - PLAČILO DAVKOV">
+                            <option value="TBIL - RAČUN ZA TELEKOMUNIKACIJE">
+                            <option value="TCSC - STROŠKI STORITEV MESTNEGA SVETA">
+                            <option value="TELI - TELEFONSKO IZVEDENA TRANSAKCIJA">
+                            <option value="TRAD - TRGOVINSKE STORITVE">
+                            <option value="TREA - ZAKLADNIŠKO PLAČILO">
+                            <option value="TRFD - SKRBNIŠKI SKLAD">
+                            <option value="TRPT - PLAČILO CESTNINE">
+                            <option value="UBIL - KOMUNALA IN ELEKTRIKA">
+                            <option value="VATX - PLAČILO DAVKA NA DODANO VREDNOST">
+                            <option value="VIEW - OSKRBA VIDA">
+                            <option value="WEBI - INTERNETNO IZVEDENA TRANSAKCIJA">
+                            <option value="WHLD - DAVEK PO ODBITKU">
+                            <option value="WTER - RAČUN ZA VODO / VODARINA">
+                            <option value="SPSP - PLAČE IN POKOJNINE V SKUPNEM NAKAZILU ZA NAZAJ">
+                        </datalist>
+                    </div>
+                    <div class="modref">
+                        <div class="model">
+                            <div class="floattxt">
+                                <input type="text" name="model" id="modelid" value="SI99" pattern="^SI[0-9]{2}$" title="SI00" placeholder=" " required />
+                                <label for="modelid" id="labelmodelid">Model </label>
+                            </div>
+                        </div>
+                        <div class="referenca">
+                            <div class="floattxt">
+                                <input type="text" name="referenca" id="referencaid" pattern="^[0-9]{1,}$" title="Uporabite lahko le stevila" placeholder=" " required />
+                                <label for="referencaid" id="labelreferencaid">Referenca</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floattxt">
+                        <input type="text" placeholder="0,00" name="znesek" id="znesekid" pattern="^\d{1,}([,][0-9]{2})$" title="Cena ima stevilo in 2 decimalni stevki ločeni z vejico" required />
+                        <label for="znesekid" id="labelznesekid">Znesek </label>
+                    </div>
+                    <div class="floattxt">
+                        <input type="text" name="namen" value="Plačilo" id="namenid" placeholder=" " required />
+                        <label for="namenid" id="labelnamenid">Namen </label>
+                    </div>
+                    <div class="floattxt">
+                        <input type="date" name="datum" id="datumid" required />
+                        <label for="datumid" id="labeldatumid">Datum plačila</label>
+                    </div>
+                    <div>
+                        <label class="nujnplac">Nujno Plačilo
+                            <input type="checkbox" name="nujnplac">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="submit">
+                    <input type="submit" id="submit_button" value="Naprej" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="javascript/javascript.js"></script>
+    <script src="javascript/sweetalert2.js"></script>
+</body>
+
+
+</html>
