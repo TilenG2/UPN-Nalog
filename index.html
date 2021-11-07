@@ -24,7 +24,7 @@
             </a>
         </div>
         <hr />
-        <form method="post" id="fullForm">
+        <form method="get" id="fullForm">
             <div class="formmain">
                 <div class="placnik">
                     <p>Plačnik</p>
@@ -439,13 +439,13 @@
                         </div>
                         <div class="referenca">
                             <div class="floattxt">
-                                <input type="text" name="referenca" id="referencaid" pattern="^[0-9]{1,22}$" title="Uporabite lahko le stevila do 22 mest" placeholder=" " required autocomplete="off" />
+                                <input type="text" name="referenca" id="referencaid" pattern="^[0-9]{1,22}$" title="Uporabite lahko le števila do 22 mest" placeholder=" " required autocomplete="off" />
                                 <label for="referencaid" id="labelreferencaid">Referenca</label>
                             </div>
                         </div>
                     </div>
                     <div class="floattxt">
-                        <input type="text" placeholder="0,00" name="znesek" id="znesekid" pattern="^\d{1,5}([,][0-9]{2})$" title="Cena ima stevilo in 2 decimalni stevki ločeni z vejico nakvecja vrednost je 99999,99" required autocomplete="off" />
+                        <input type="text" placeholder="0,00" name="znesek" id="znesekid" pattern="^\d{1,5}([,][0-9]{2})$" title="Cena ima število in 2 decimalni števki ločeni z vejico nakvečja vrednost je 99999,99" required autocomplete="off" />
                         <label for="znesekid" id="labelznesekid">Znesek </label>
                     </div>
                     <div class="floattxt">
@@ -453,7 +453,7 @@
                         <label for="namenid" id="labelnamenid">Namen </label>
                     </div>
                     <div class="floattxt">
-                        <input type="date" name="datum" id="datumid" required/>
+                        <input type="date" name="datum" id="datumid" required />
                         <label for="datumid" id="labeldatumid">Datum plačila</label>
                     </div>
                     <div>
